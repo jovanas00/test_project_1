@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="normalize.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="page-body">
+
+            <div class="sidebar">
+                <div class="sidebar-part-one">
+                    <div class="sidebar-title">
+                        <img src="images/sidebar/Logo_mark.png" alt="logo" class="logo-img">
+                        <div>Company Name</div>
+                    </div>
+                    <div>
+                        <input type="search" placeholder="&#xF002 Search" class="sidebar-input">
+                    </div>
+                    <div class="sidebar-section-one">
+                        <div class="sidebar-section">
+                            <img src="images/sidebar/life-buoy.png" alt="life-buoy" class="section-img">
+                            <div>Analytics</div>
+                        </div>
+                        <div class="sidebar-section">
+                            <img src="images/sidebar/life-buoy.png" alt="life-buoy" class="section-img">
+                            <div>Clients</div>
+                        </div>
+                        <div class="sidebar-section">
+                            <img src="images/sidebar/life-buoy.png" alt="life-buoy" class="section-img">
+                            <div>Users</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sidebar-part-two">
+                    <div class="sidebar-section">
+                        <img src="images/sidebar/life-buoy.png" alt="life-buoy" class="section-img">
+                        <div>Support</div>
+                    </div>
+                    <div class="sidebar-section">
+                        <img src="images/sidebar/settings.png" alt="settings" class="section-img">
+                        <div>Settings</div>
+                    </div>
+                    <div class="used-space">
+                        <div>Used space</div>
+                        <div>Your used 80% of your available space.</div>
+                        <div class="progress-bar-border">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="images/sidebar/Divider.png" alt="divider" class="section-img">
+                    </div>
+                    <div class="sidebar-profile">
+                        <div class="sidebar-profile-data">
+                            <img src="images/Avatar.png" alt="Avatar" class="section-img">
+                            <div>
+                                <div class="sidebar-profile-name">Olivia Rhye</div>
+                                <div>olivia@untitledui.com</div>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="images/sidebar/Button.png" alt="button" class="sidebar-button" class="section-img">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="page">
+                <div class="page-top">
+                    <h6 class="page-title">Clients</h6>
+                    <div class="profile">
+                        <img src="images/page-top/settings.png" alt="settings">
+                        <img src="images/page-top/bell.png" alt="bell">
+                        <img src="images/Avatar.png" alt="Avatar">
+                    </div>
+                </div>
+                <!-- <div class="page-info">
+                    <input type="text" placeholder="&#xF002 Search for clients" class="page-search">
+                    <div>
+                        <div class="card">
+                            <div class="card-title-div">
+                                <div class="card-title">Clients</div>
+                                <button class="add-clients-btn">Add Client</button>
+                            </div>
+                            <div class="table-header">
+                                <div>ID</div>
+                                <div>Client</div>
+                                <div>Phone</div>
+                                <div>Address</div>
+                                <div>Active links</div>
+                                <div>Action</div>
+                            </div>
+                            <div class="table-rows">
+
+                            </div>
+                            <div class="pagination"></div>    
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+
+            <div class="modal-div"> 
+                <div class="add-client-modal"> 
+                    <div class="modal-top">  
+                        <h3 class="modal-title">Add Client</h3>
+                        <img src="images/modal/close_btn.png" alt="x" class="close-btn">
+                    </div>
+                    <div class="modal-row"> 
+                        <div>Full name</div>
+                        <input type="text" placeholder="Full name" class="name-input">
+                    </div>
+                    <div class="modal-row">
+                        <div>Email</div>
+                        <input type="email" placeholder="Email" class="email-input">
+                    </div>
+                    <div class="modal-row"> 
+                        <div>Phone(optional)</div>
+                        <input type="tel" placeholder="Phone" class="phone-input">
+                    </div>
+                    <div class="modal-row"> 
+                        <div>Company</div>
+                        <input type="text" placeholder="Company" class="company-input">
+                    </div>
+                    <div class="country-code">
+                        <div class="modal-row">
+                            <div>Country</div>
+                            <select class="country-input">
+                                <option>Serbia</option>
+                                <option>Bulgaria</option>
+                                <option>Romania</option>
+                                <option>Germany</option>
+                            </select>
+                        </div>
+                        <div class="modal-row">
+                            <div>Zip code</div>
+                            <input type="text" placeholder="Zip code" class="zip-input">
+                        </div>
+                    </div>
+                    <div class="addres-apt">
+                        <div class="modal-row">
+                            <div>Address</div>
+                            <input type="text" placeholder="Address" class="address-input">
+                        </div>
+                        <div class="modal-row">
+                            <div>Apt Number</div>
+                            <input type="text" placeholder="Apt Number" class="apt-input">
+                        </div>
+                    </div>
+                    <div class="modal-row modal-btn-div">
+                        <button class="add-clients-btn">Add Client</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-info">
+                <div class="client-info-header">
+                    <h2>Client Information</h2>
+                    <div class="header-btns">
+                        <div class="btn-name">
+                            <img src="images/modal/delete.png" alt="delete">
+                            <div>Delete Client</div>
+                        </div>
+                        <div  class="btn-name">
+                            <img src="images/edit2.png" alt="edit">
+                            <div>Edit Client</div>
+                        </div>   
+                    </div>
+                    <!-- <div class="client-info-infos">
+                        <div>
+
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>    -->
+                </div>
+            </div>
+
+        </div>
+        <script src="scripts.js">
+           
+
+
+            /*function addClient() {
+                const modalDiv = document.createElement('div'); 
+                modalDiv.setAttribute('class', 'modal-div');
+                document.body.appendChild(modalDiv);
+
+                const modal = document.createElement('div');
+                modal.setAttribute('class', 'add-client-modal');
+                modalDiv.appendChild(modal);
+
+                const modalTop = document.createElement('div');
+                modalTop.setAttribute('class', 'modal-top');
+                modal.appendChild(modalTop);
+
+                const modalTitle = document.createElement('h3');
+                modalTitle.setAttribute('class', 'modal-title');
+                modalTitle.innerText = "Add Client";
+                modalTop.appendChild(modalTitle);
+
+                const close = document.createElement('img');
+                close.setAttribute('src', 'images/close_btn.png');
+                modalTop.appendChild(close);
+                close.addEventListener('click', function() {
+                    document.body.removeChild(modalDiv);
+                })
+
+                const nameDiv = document.createElement('div');
+                nameDiv.setAttribute('class', 'modal-row');
+                modal.appendChild(nameDiv);
+
+                const name = document.createElement('div');
+                name.innerText = "Full name";
+                nameDiv.appendChild(name);
+
+                const nameInput = document.createElement('input');
+                nameInput.setAttribute('type', 'text');
+                nameInput.setAttribute('placeholder', 'Full name');
+                nameDiv.appendChild(nameInput);
+
+                const emailDiv = document.createElement('div');
+                emailDiv.setAttribute('class', 'modal-row');
+                modal.appendChild(emailDiv);
+
+                const email = document.createElement('div');
+                email.innerText = "Email";
+                emailDiv.appendChild(email);
+
+                const emailInput = document.createElement('input');
+                emailInput.setAttribute('type', 'email');
+                emailInput.setAttribute('placeholder', 'Email');
+                emailDiv.appendChild(emailInput);
+
+                const phoneDiv = document.createElement('div');
+                phoneDiv.setAttribute('class', 'modal-row');
+                modal.appendChild(phoneDiv);
+
+                const phone = document.createElement('div');
+                phone.innerText = "Phone(optional)";
+                phoneDiv.appendChild(phone);
+
+                const phoneInput = document.createElement('input');
+                phoneInput.setAttribute('type', 'tel');
+                phoneInput.setAttribute('placeholder', 'Phone');
+                phoneDiv.appendChild(phoneInput);
+
+                const companyDiv = document.createElement('div');
+                companyDiv.setAttribute('class', 'modal-row');
+                modal.appendChild(companyDiv);
+
+                const company = document.createElement('div');
+                company.innerText = "Company";
+                companyDiv.appendChild(company);
+
+                const companyInput = document.createElement('input');
+                companyInput.setAttribute('type', 'text');
+                companyInput.setAttribute('placeholder', 'Company');
+                companyDiv.appendChild(companyInput);
+
+                const countryCode = document.createElement('div');
+                countryCode.setAttribute('class', 'country-code');
+                modal.appendChild(countryCode);
+
+                const countryDiv = document.createElement('div');
+                countryDiv.setAttribute('class', 'modal-row');
+                countryCode.appendChild(countryDiv);
+
+                const country = document.createElement('div');
+                country.innerText = "Country";
+                countryDiv.appendChild(country);
+
+                const countryInput = document.createElement('select');
+                // country.setAttribute('class', 'modal-row');
+                countryDiv.appendChild(countryInput);
+                let options = ["Bulgaria", "Serbia", "Germany", "Romania", "Hungary", "Austria"];
+                options.forEach(element => {
+                    const option = document.createElement('option');
+                    option.innerText = element;
+                    countryInput.appendChild(option);
+                });
+
+                const codeDiv = document.createElement('div');
+                codeDiv.setAttribute('class', 'modal-row');
+                countryCode.appendChild(codeDiv);
+
+                const code = document.createElement('div');
+                code.innerText = "Zip code";
+                codeDiv.appendChild(code);
+
+                const codeInput = document.createElement('input');
+                codeInput.setAttribute('type', 'text');
+                codeInput.setAttribute('placeholder', 'Zip code');
+                codeDiv.appendChild(codeInput);
+
+                const addresApt = document.createElement('div');
+                addresApt.setAttribute('class', 'addres-apt');
+                modal.appendChild(addresApt);
+
+                const addressDiv = document.createElement('div');
+                addressDiv.setAttribute('class', 'modal-row');
+                addresApt.appendChild(addressDiv);
+
+                const address = document.createElement('div');
+                address.innerText = "Address";
+                addressDiv.appendChild(address);
+
+                const addressInput = document.createElement('input');
+                addressInput.setAttribute('type', 'text');
+                addressInput.setAttribute('placeholder', 'Address');
+                addressDiv.appendChild(addressInput);
+                
+                const aptDiv = document.createElement('div');
+                aptDiv.setAttribute('class', 'modal-row');
+                addresApt.appendChild(aptDiv);
+
+                const apt = document.createElement('div');
+                apt.innerText = "Apt";
+                aptDiv.appendChild(apt);
+
+                const aptInput = document.createElement('input');
+                aptInput.setAttribute('type', 'text');
+                aptInput.setAttribute('placeholder', 'Apt Number');
+                aptDiv.appendChild(aptInput);
+
+                const btnDiv = document.createElement('div');
+                btnDiv.classList.add('class', 'modal-row');
+                btnDiv.classList.add('modal-btn-div');
+                modal.appendChild(btnDiv);
+
+                const addClientBtn = document.createElement('button');
+                addClientBtn.innerText = "Add Client";
+                addClientBtn.setAttribute('class', 'add-clients-btn');
+                btnDiv.appendChild(addClientBtn);
+            }*/
+
+        </script>
+    </body>
+</html>
+
+<!-- <div class="add-client-modal">
+    <div class="modal-top">
+        <div>Add Client</div>
+        <img src="" alt="">
+    </div>
+    <div class="modal-row">
+       <div>Full name</div>
+       <input type="text" placeholder="Full name">
+    </div>
+    <div class="modal-row">
+        <div>Email</div>
+        <input type="text" placeholder="Email">
+     </div>
+     <div class="modal-row">
+        <div>Phone(optional)</div>
+        <input type="text" placeholder="Phone">
+     </div>
+     <div class="modal-row">
+        <div>Company</div>
+        <input type="text" placeholder="Company">
+     </div>
+
+</div> -->
