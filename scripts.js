@@ -177,22 +177,25 @@ deleteClientDeleteBtn.addEventListener('click', function() {
     numberOfClients.innerText = num.toString();
 });
 
-// const pageSearch = document.querySelector('.page-search');
-// pageSearch.addEventListener('input', function() {
-//     const tableDiv = document.querySelector('.table-rows');
-//     const tableChildren = tableDiv.innerHTML;
-//     console.log(tableChildren);
-//     let filter = pageSearch.value.toUpperCase();
-//     names.forEach(n => {
-//         if(n.name.toUpperCase() === filter)
-//         {
-//             let row = document.getElementById(`${n.id}`);
-//             tableDiv.replaceChildren();
-//             tableDiv.appendChild(row);
-//         }
-//         else
-//         {
-//             tableDiv.innerHTML = tableChildren;
-//         }
-//     });
-// });
+const inputTableDiv = document.querySelector('.table-rows');
+
+const pageSearch = document.querySelector('.page-search');
+pageSearch.addEventListener('input', function() {
+    
+    const tableChildren = inputTableDiv.innerHTML;
+    console.log(tableChildren);
+    let filter = pageSearch.value.toUpperCase();
+    names.forEach(n => {
+        if(n.name.toUpperCase() === filter)
+        {
+            let row = document.getElementById(`${n.id}`);
+            // inputTableDiv.replaceChildren();
+            inputTableDiv.appendChild(row);
+        }
+        else
+        {
+            inputTableDiv.replaceChildren();
+            inputTableDiv.innerHTML = tableChildren;
+        }
+    });
+});
