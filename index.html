@@ -59,7 +59,7 @@
                     </div>
                     <div class="sidebar-profile">
                         <div class="sidebar-profile-data">
-                            <img src="images/Avatar.png" alt="Avatar" class="section-img">
+                            <img src="images/Avatar.png" alt="Avatar" class="section-img client-info-button">
                             <div>
                                 <div class="sidebar-profile-name">Olivia Rhye</div>
                                 <div>olivia@untitledui.com</div>
@@ -70,41 +70,158 @@
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <div class="page">
                 <div class="page-top">
-                    <h6 class="page-title">Clients</h6>
+                    <ul class="navigation">
+                        <li class="page-title">Clients</li>
+                    </ul>
+                    
                     <div class="profile">
                         <img src="images/page-top/settings.png" alt="settings">
                         <img src="images/page-top/bell.png" alt="bell">
                         <img src="images/Avatar.png" alt="Avatar">
                     </div>
                 </div>
-                <!-- <div class="page-info">
+                <div class="page-info">
                     <input type="text" placeholder="&#xF002 Search for clients" class="page-search">
                     <div>
                         <div class="card">
                             <div class="card-title-div">
-                                <div class="card-title">Clients</div>
+                                <div>
+                                    <div class="card-title">Clients</div>
+                                    <div class="links-number">
+                                        <div class="number-of-clients">0</div> 
+                                        <div>clients</div>
+                                    </div>
+                                </div>
                                 <button class="add-clients-btn">Add Client</button>
                             </div>
-                            <div class="table-header">
-                                <div>ID</div>
-                                <div>Client</div>
-                                <div>Phone</div>
-                                <div>Address</div>
-                                <div>Active links</div>
-                                <div>Action</div>
-                            </div>
-                            <div class="table-rows">
-
-                            </div>
+                            <table>
+                                <tr class="table-header">
+                                    <th>ID</th>
+                                    <th>Client</th>
+                                    <th>Phone</th>
+                                    <th>Address</th>
+                                    <th>Active links</th>
+                                    <th>Action</th>
+                                </tr>
+                                <tbody class="table-rows">
+    
+                                </tbody>
+                            </table>
+                            
                             <div class="pagination"></div>    
                         </div>
                     </div>
-                </div> -->
+                </div>
+            </div>
+
+            <div class="client-info">
+                <div class="client-info-header">
+                    <h2>Client Information</h2>
+                    <div class="header-btns">
+                        <div class="btn-name">
+                            <img src="images/modal/delete.png" alt="delete">
+                            <div>Delete Client</div>
+                        </div>
+                        <div  class="btn-name edit2">
+                            <img src="images/edit2.png" alt="edit">
+                            <div>Edit Client</div>
+                        </div>   
+                    </div>
+                </div>
+                <div class="client-info-data">
+                    <div class="client">
+                        <div class="client-top">
+                            <h3>Olivia Rhye</h3>
+                            <div>Member since: 26.03.2023</div>
+                        </div>
+                        <div class="client-bottom">
+                            <div class="client-row">
+                                <label>Email Address:</label>
+                                <div>olivia@bb.com</div>
+                            </div>
+                            <div class="client-row">
+                                <label>Phone:</label>
+                                <div>+55 55 555 555</div>
+                            </div>
+                            <div class="client-row">
+                                <label>Company:</label>
+                                <div>BlackRock</div>
+                            </div>
+                            <div class="client-row">
+                                <label>Country:</label>
+                                <div>Switzerland</div>
+                            </div>
+                            <div class="client-row">
+                                <label>City/Zip Code:</label>
+                                <div>Barbengo / 6917</div>
+                            </div>
+                            <div class="client-row">
+                                <label>Address:</label>
+                                <div>Wiesenstrasse 139</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="activity-log">
+                        <div class="activity-top">
+                            <h3>Activity Log</h3>
+                            <button>Clear Log</button>
+                        </div>
+                        <div class="activity-bottom">
+                            <div class="activity-row">
+                                <label>25.03.2023 @ 10:23:45</label>
+                                <div>John Doe logged in for the first time.</div>
+                            </div>
+                            <div class="activity-row">
+                                <label>25.03.2023 @ 10:23:45</label>
+                                <div>John Doe accessed project "Felsenhof Apartments".</div>
+                            </div>
+                            <div class="activity-row">
+                                <label>25.03.2023 @ 10:23:45</label>
+                                <div>John Doe accessed documents folder "02 Grundbuchauszug".</div>
+                            </div>
+                            <div class="activity-row">
+                                <label>25.03.2023 @ 10:23:45</label>
+                                <div>John Doe downloaded "Dienstbarkeiten" &centerdot; Pfandrechte.</div>
+                            </div>
+                            <div class="activity-row">
+                                <label>25.03.2023 @ 10:23:45</label>
+                                <div>John Doe copied text from project "Felsenhof Apartments", "Rüfikopf and on the Madloch".</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="client-links">
+                    <div class="links-top">
+                        <div>
+                            <h3>Links</h3>
+                            <div class="links-number">
+                                <div class="number-of-links">0</div>
+                                <div>links</div>
+                            </div>
+                        </div>
+                        <button class="add-clients-btn">New Link</button>
+                    </div>
+                    <table class="links-table">
+                        <thead>
+                            <tr class="table-header">
+                                <th>ID</th>
+                                <th>Issued by</th>
+                                <th>Issue date</th>
+                                <th>Expiration</th>
+                                <th>Project Access</th>
+                                <th>Downloading</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-rows">
+
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
             <div class="modal-div"> 
@@ -160,27 +277,25 @@
                 </div>
             </div>
 
-            <div class="client-info">
-                <div class="client-info-header">
-                    <h2>Client Information</h2>
-                    <div class="header-btns">
-                        <div class="btn-name">
-                            <img src="images/modal/delete.png" alt="delete">
-                            <div>Delete Client</div>
+            <div class="delete-client-modal-div">
+                <div class="delete-client-modal">
+                    <img src="images/delete-modal/alert.png" alt="alert">
+                    <div class="delete-client-text">
+                        <div>
+                            <div class="delete-client-title">Delete Client</div>
+                            <div class="delete-client-msg">Are you sure you want to delte this client? This action cannot be undone.</div>
                         </div>
-                        <div  class="btn-name">
-                            <img src="images/edit2.png" alt="edit">
-                            <div>Edit Client</div>
-                        </div>   
+                        <div class="delete-client-btns">
+                            <div class="delete-client-checkbox">
+                                <input type="checkbox">
+                                <label> Don't show again</label>
+                            </div>
+                            <div>
+                                <button class="delete-client-cancel-btn">Cancle</button>
+                                <button class="delete-client-delete-btn">Delete</button>
+                            </div>
+                        </div>
                     </div>
-                    <!-- <div class="client-info-infos">
-                        <div>
-
-                        </div>
-                        <div>
-
-                        </div>
-                    </div>    -->
                 </div>
             </div>
 
