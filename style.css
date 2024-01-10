@@ -222,13 +222,16 @@ ul.navigation li + li:before {
     font-size: 18px;
 }
 
-.add-clients-btn {
+.add-clients-btn,
+.send-link-btn,
+.new-link-btn {
     background-color: #7F56D9;
     border: none;
     border-radius: 8px;
     padding: 10px 16px;
     color: white;
     font-family: Inter-Regular;
+    cursor: pointer;
 }
 
 .add-clients-btn:hover {
@@ -249,7 +252,15 @@ table {
 }
 
 .table-row {
+    font-family: Inter-Medium;
+    font-size: 14px;
+    line-height: 20px;
     padding: 12px 24px;
+    border-bottom: 1px solid #EAECF0;
+}
+
+.table-row:last-child {
+    border-bottom: none;
 }
 
 .table-cell, th {
@@ -259,7 +270,9 @@ table {
 }
 
 .modal-div,
-.delete-client-modal-div {
+.delete-client-modal-div,
+.new-link-modal-div,
+.access-list-modal-div {
     display: none;
     position: fixed;
     top: 0;
@@ -267,11 +280,12 @@ table {
     left: 0;
     right: 0;
     background-color: gray;
-    opacity: 0.9;
+    opacity: 0.95;
     font-family: Inter-Regular;
 }
 
-.add-client-modal {
+.add-client-modal,
+.new-link-modal {
     position: absolute;
     background-color: white;/*#EAECF0;*/
     display: flex;
@@ -281,9 +295,11 @@ table {
     /* top: calc(50% - 200px); */
     left: calc(50% - 250px);
     padding: 1.5rem;
+    z-index: 100;
 }
 
-.modal-top {
+.modal-top,
+.new-link-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -440,10 +456,6 @@ table {
     color: #344054;
 }
 
-/* .activity-log {
-    width: 648px;
-} */
-
 .activity-top,
 .links-top {
     display: flex;
@@ -515,13 +527,15 @@ table {
     color: #D0D5DD;
 }
 
-.delete-client-modal-div {
+.delete-client-modal-div,
+.access-list-modal-div {
     display: none;
     background-color: #344054;
     opacity: 1;
 }
 
-.delete-client-modal {
+.delete-client-modal,
+.access-list-modal {
     position: absolute;
     background-color: white;
     display: flex;
@@ -591,4 +605,136 @@ table {
     font-size: 14px;
     line-height: 20px;
     color: #667085;
+}
+
+/* new link */
+
+.content-divider {
+    padding: 0.5rem;
+    background-color: #F9FAFB;
+    color: #101828;
+    border-radius: 0.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-family: Inter-Regular;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.expiration-part,
+.access-part {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.radio-group1,
+.radio-group2 {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+}
+
+.radio-select {
+    display: flex;
+    align-items: center;
+    column-gap: 25px;
+}
+
+.checkboxes-part {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+}
+
+.checkboxes-part div {
+    display: flex;
+    column-gap: 0.5rem;
+    align-items: flex-start;
+}
+
+.labels {
+    display: flex;
+    flex-direction: column;
+}
+
+input, select {
+    cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"]  {
+    cursor: pointer;
+    width: 1rem;
+    height: 1rem;
+    accent-color: #7F56D9;
+    color: #D0D5DD;
+}
+
+.label2 {
+    color: #667085;
+}
+
+.select-time {
+    height: 44px;
+    color: #667085;
+    background-color: white;
+    border: 1px solid #D0D5DD;
+    border-radius: 0.5rem;
+    width: 350px;
+    display: flex;
+    align-self: flex-end;
+}
+
+.select-date {
+    padding-left: 1.5rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 43px;
+    background: url("images/modal/calendar.png") no-repeat 18px 10px;
+    width: 100px;
+    border-radius: 0.5rem;
+    border: 1px solid #D0D5DD;
+}
+
+.select-date:focus {
+    width: 150px;
+    padding-left: 18px;
+    padding-right: 18px;
+    background: none;
+}
+
+.select-time-input {
+    width: 140px;
+    background: url('images/modal/clock.png') no-repeat 120px 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #D0D5DD;
+}
+
+.radio-inputs {
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+}
+
+.access-list-modal {
+    flex-direction: column;
+    height: 250px;
+}
+
+.project-name {
+    padding: 12px 24px;
+    background-color: #F9FAFB;
+    color: #667085;
+    font-size: 12px;
+}
+
+.project {
+    padding: 16px 24px;
+    border-bottom: 1px solid #EAECF0;
+    font-size: 14px;
 }

@@ -1,0 +1,37 @@
+.page {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #344054;
+}
+
+.login-div {
+    position: absolute;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 250px;
+    height: 80px;
+    top: calc(50% - 125px);
+    left: calc(50% - 272px);
+    padding: 1.5rem;
+    border-radius: 12px;
+    column-gap: 1.5rem;
+    font-family: Inter-Medium;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.log-in {
+    background-color: #7F56D9;
+    color: white;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 5px ;
+}

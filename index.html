@@ -203,7 +203,7 @@
                                 <div>links</div>
                             </div>
                         </div>
-                        <button class="add-clients-btn">New Link</button>
+                        <button class="new-link-btn">New Link</button>
                     </div>
                     <table class="links-table">
                         <thead>
@@ -217,7 +217,7 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody class="table-rows">
+                        <tbody class="table-rows-links">
 
                         </tbody>
                     </table>
@@ -299,6 +299,116 @@
                 </div>
             </div>
 
+
+            <div class="new-link-modal-div">
+                <div class="new-link-modal">
+                    <div class="new-link-top">
+                        <h3 class="modal-title">New Link</h3>
+                        <img src="images/modal/close_btn.png" alt="x" class="close-btn">
+                    </div>
+                    <div class="content-divider">
+                        Expiration
+                    </div>
+                    <div class="expiration-part">
+                        <div class="radio-group1">
+                            <div class="radio-inputs">
+                                <div>
+                                    <input type="radio" name="group1" value="Time limitation" class="time-limitation">
+                                    <label>Time limitation</label>
+                                </div>
+                                <div class="inputs">
+                                    <input type="text" placeholder="Select date" onfocus="(this.type='date')" onblur="(this.type='text')" class="select-date">
+                                    <input type="text" placeholder="Select time" onfocus="(this.type='time')" onblur="(this.type='text')" class="select-time-input">
+                                </div>
+                            </div>
+                            <div>
+                                <input type="radio" name="group1" value="Access limitation" class="access-limitation">
+                                <label>Access limitation</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="group1" value="Unlimited" class="expiration-unlimited">
+                                <label>Unlimited</label>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="content-divider">
+                        Project access
+                    </div>
+                    <div>
+                       <div class="access-part">
+                        <div class="radio-group2">
+                            <div>
+                                <input type="radio" name="group2" class="access-limitation project-access-limitation" value="Access limitation">
+                                <label>Access limitation</label> 
+                            </div>
+                            <div class="radio-select">
+                                <div>
+                                    <input type="radio" name="group2" class="only-selected">
+                                    <label>Only selected</label>
+                                </div>
+                                
+                                <select class="select-time">
+                                    <option value="" selected hidden>Select time</option>
+                                    <option value="Unlimited">Unlimited</option>
+                                    <option value="4 Projects">4 Projects</option>
+                                    <option value="1 Project">1 Project</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                       </div>
+                       <div class="checkboxes-part">
+                        <div>
+                            <input type="checkbox">
+                            <div class="labels">
+                                <label class="label1">Passcode</label>
+                                <label class="label2">Viewsers access website from multiple devices</label>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="checkbox">
+                            <div class="labels">
+                                <label class="label1">Allow access from multiple devices</label>
+                                <label class="label2">Viewsers access website from multiple devices</label>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="checkbox">
+                            <div class="labels">
+                                <label class="label1">Require agreement to view</label>
+                                <label class="label2">Viewsers must agree with legal notice in order to view content</label>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="checkbox">
+                            <div class="labels">
+                                <label class="label1">Require to sign NDA before accessing</label>
+                                <label class="label2">Require to sign NDA before accessing</label>
+                            </div>
+                        </div>
+                       </div> 
+                    </div>
+                    <div class="modal-row modal-btn-div">
+                        <button class="send-link-btn">Send link</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="access-list-modal-div">
+            <div class="access-list-modal">
+                <div class="modal-top">  
+                    <h3 class="modal-title">Project Access List</h3>
+                    <img src="images/modal/close_btn.png" alt="x" class="close-btn-access-list">
+                </div>
+                <div class="projects">
+                    <div class="project-name">Project Name</div>
+                    <div class="project">Project Name 1</div>
+                    <div class="project">Project Name 2</div>
+                    <div class="project">Project Name 3</div>
+                </div>
+            </div>
         </div>
         <script src="scripts.js">
            
