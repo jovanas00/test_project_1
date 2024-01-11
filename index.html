@@ -98,20 +98,21 @@
                                 </div>
                                 <button class="add-clients-btn">Add Client</button>
                             </div>
-                            <table>
-                                <tr class="table-header">
-                                    <th>ID</th>
-                                    <th>Client</th>
-                                    <th>Phone</th>
-                                    <th>Address</th>
-                                    <th>Active links</th>
-                                    <th>Action</th>
-                                </tr>
-                                <tbody class="table-rows">
-    
-                                </tbody>
-                            </table>
-                            
+                            <div class="table-div">
+                                <table>
+                                    <tr class="table-header">
+                                        <th>ID</th>
+                                        <th>Client</th>
+                                        <th>Phone</th>
+                                        <th>Address</th>
+                                        <th>Active links</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    <tbody class="table-rows">
+        
+                                    </tbody>
+                                </table>
+                            </div>
                             <div class="pagination"></div>    
                         </div>
                     </div>
@@ -205,22 +206,24 @@
                         </div>
                         <button class="new-link-btn">New Link</button>
                     </div>
-                    <table class="links-table">
-                        <thead>
-                            <tr class="table-header">
-                                <th>ID</th>
-                                <th>Issued by</th>
-                                <th>Issue date</th>
-                                <th>Expiration</th>
-                                <th>Project Access</th>
-                                <th>Downloading</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody class="table-rows-links">
-
-                        </tbody>
-                    </table>
+                    <div class="table-div">
+                        <table class="links-table">
+                            <thead>
+                                <tr class="table-header">
+                                    <th>ID</th>
+                                    <th>Issued by</th>
+                                    <th>Issue date</th>
+                                    <th>Expiration</th>
+                                    <th>Project Access</th>
+                                    <th>Downloading</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-rows-links">
+    
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 
@@ -411,186 +414,6 @@
             </div>
         </div>
         <script src="scripts.js">
-           
-
-
-            /*function addClient() {
-                const modalDiv = document.createElement('div'); 
-                modalDiv.setAttribute('class', 'modal-div');
-                document.body.appendChild(modalDiv);
-
-                const modal = document.createElement('div');
-                modal.setAttribute('class', 'add-client-modal');
-                modalDiv.appendChild(modal);
-
-                const modalTop = document.createElement('div');
-                modalTop.setAttribute('class', 'modal-top');
-                modal.appendChild(modalTop);
-
-                const modalTitle = document.createElement('h3');
-                modalTitle.setAttribute('class', 'modal-title');
-                modalTitle.innerText = "Add Client";
-                modalTop.appendChild(modalTitle);
-
-                const close = document.createElement('img');
-                close.setAttribute('src', 'images/close_btn.png');
-                modalTop.appendChild(close);
-                close.addEventListener('click', function() {
-                    document.body.removeChild(modalDiv);
-                })
-
-                const nameDiv = document.createElement('div');
-                nameDiv.setAttribute('class', 'modal-row');
-                modal.appendChild(nameDiv);
-
-                const name = document.createElement('div');
-                name.innerText = "Full name";
-                nameDiv.appendChild(name);
-
-                const nameInput = document.createElement('input');
-                nameInput.setAttribute('type', 'text');
-                nameInput.setAttribute('placeholder', 'Full name');
-                nameDiv.appendChild(nameInput);
-
-                const emailDiv = document.createElement('div');
-                emailDiv.setAttribute('class', 'modal-row');
-                modal.appendChild(emailDiv);
-
-                const email = document.createElement('div');
-                email.innerText = "Email";
-                emailDiv.appendChild(email);
-
-                const emailInput = document.createElement('input');
-                emailInput.setAttribute('type', 'email');
-                emailInput.setAttribute('placeholder', 'Email');
-                emailDiv.appendChild(emailInput);
-
-                const phoneDiv = document.createElement('div');
-                phoneDiv.setAttribute('class', 'modal-row');
-                modal.appendChild(phoneDiv);
-
-                const phone = document.createElement('div');
-                phone.innerText = "Phone(optional)";
-                phoneDiv.appendChild(phone);
-
-                const phoneInput = document.createElement('input');
-                phoneInput.setAttribute('type', 'tel');
-                phoneInput.setAttribute('placeholder', 'Phone');
-                phoneDiv.appendChild(phoneInput);
-
-                const companyDiv = document.createElement('div');
-                companyDiv.setAttribute('class', 'modal-row');
-                modal.appendChild(companyDiv);
-
-                const company = document.createElement('div');
-                company.innerText = "Company";
-                companyDiv.appendChild(company);
-
-                const companyInput = document.createElement('input');
-                companyInput.setAttribute('type', 'text');
-                companyInput.setAttribute('placeholder', 'Company');
-                companyDiv.appendChild(companyInput);
-
-                const countryCode = document.createElement('div');
-                countryCode.setAttribute('class', 'country-code');
-                modal.appendChild(countryCode);
-
-                const countryDiv = document.createElement('div');
-                countryDiv.setAttribute('class', 'modal-row');
-                countryCode.appendChild(countryDiv);
-
-                const country = document.createElement('div');
-                country.innerText = "Country";
-                countryDiv.appendChild(country);
-
-                const countryInput = document.createElement('select');
-                // country.setAttribute('class', 'modal-row');
-                countryDiv.appendChild(countryInput);
-                let options = ["Bulgaria", "Serbia", "Germany", "Romania", "Hungary", "Austria"];
-                options.forEach(element => {
-                    const option = document.createElement('option');
-                    option.innerText = element;
-                    countryInput.appendChild(option);
-                });
-
-                const codeDiv = document.createElement('div');
-                codeDiv.setAttribute('class', 'modal-row');
-                countryCode.appendChild(codeDiv);
-
-                const code = document.createElement('div');
-                code.innerText = "Zip code";
-                codeDiv.appendChild(code);
-
-                const codeInput = document.createElement('input');
-                codeInput.setAttribute('type', 'text');
-                codeInput.setAttribute('placeholder', 'Zip code');
-                codeDiv.appendChild(codeInput);
-
-                const addresApt = document.createElement('div');
-                addresApt.setAttribute('class', 'addres-apt');
-                modal.appendChild(addresApt);
-
-                const addressDiv = document.createElement('div');
-                addressDiv.setAttribute('class', 'modal-row');
-                addresApt.appendChild(addressDiv);
-
-                const address = document.createElement('div');
-                address.innerText = "Address";
-                addressDiv.appendChild(address);
-
-                const addressInput = document.createElement('input');
-                addressInput.setAttribute('type', 'text');
-                addressInput.setAttribute('placeholder', 'Address');
-                addressDiv.appendChild(addressInput);
-                
-                const aptDiv = document.createElement('div');
-                aptDiv.setAttribute('class', 'modal-row');
-                addresApt.appendChild(aptDiv);
-
-                const apt = document.createElement('div');
-                apt.innerText = "Apt";
-                aptDiv.appendChild(apt);
-
-                const aptInput = document.createElement('input');
-                aptInput.setAttribute('type', 'text');
-                aptInput.setAttribute('placeholder', 'Apt Number');
-                aptDiv.appendChild(aptInput);
-
-                const btnDiv = document.createElement('div');
-                btnDiv.classList.add('class', 'modal-row');
-                btnDiv.classList.add('modal-btn-div');
-                modal.appendChild(btnDiv);
-
-                const addClientBtn = document.createElement('button');
-                addClientBtn.innerText = "Add Client";
-                addClientBtn.setAttribute('class', 'add-clients-btn');
-                btnDiv.appendChild(addClientBtn);
-            }*/
-
         </script>
     </body>
 </html>
-
-<!-- <div class="add-client-modal">
-    <div class="modal-top">
-        <div>Add Client</div>
-        <img src="" alt="">
-    </div>
-    <div class="modal-row">
-       <div>Full name</div>
-       <input type="text" placeholder="Full name">
-    </div>
-    <div class="modal-row">
-        <div>Email</div>
-        <input type="text" placeholder="Email">
-     </div>
-     <div class="modal-row">
-        <div>Phone(optional)</div>
-        <input type="text" placeholder="Phone">
-     </div>
-     <div class="modal-row">
-        <div>Company</div>
-        <input type="text" placeholder="Company">
-     </div>
-
-</div> -->

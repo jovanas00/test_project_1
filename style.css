@@ -42,6 +42,10 @@
     row-gap: 1.5rem;
 }
 
+.sidebar-part-two {
+    margin-top: 2rem;
+}
+
 .sidebar-title {
     display: flex;
     align-items: center;
@@ -236,6 +240,11 @@ ul.navigation li + li:before {
 
 .add-clients-btn:hover {
     cursor: pointer;
+}
+
+.table-div {
+    overflow-y: auto;
+    overflow-x:auto;
 }
 
 table {

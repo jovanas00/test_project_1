@@ -1,33 +1,3 @@
-// localStorage.setItem('isLogedIn', false);
-// localStorage.setItem('email', 'olivia@untitledui.com');
-// localStorage.setItem('password', 'olivia123');
-
-// const logInBtn = document.querySelector('.log-in');
-// logInBtn.addEventListener('click', function() {
-//     check();
-// })
-
-// function check() {
-//     const storedEmail = localStorage.getItem('email');
-//     const storedPassword = localStorage.getItem('password');
-//     const isLogedIn = localStorage.getItem('isLogedIn');
-
-//     const userEmail = document.querySelector('.user-email');
-//     const userPassword = document.querySelector('.user-password');
-
-//     if(userEmail.value !== storedEmail || userPassword.value !== storedPassword) {
-//         alert("Netacni podaci");
-//     }
-//     else if(isLogedIn){
-//         alert("Vec ste ulogovani!");
-//     }
-//     else
-//     {
-//         localStorage.getItem('isLogedIn', true);
-//         window.location = 'index.html';
-//     }
-// }
-
 const logOut = document.querySelector('.sidebar-button');
 logOut.addEventListener('click', function() {
     localStorage.setItem('isLogedIn', false);
@@ -37,7 +7,7 @@ logOut.addEventListener('click', function() {
 const addBtn = document.querySelector('.add-clients-btn');
 const modal = document.querySelector('.modal-div');
 const deleteClientModal = document.querySelector('.delete-client-modal-div');
-let names = [];
+
 let brojac = 0;
 
 addBtn.addEventListener('click', function() {
@@ -47,141 +17,161 @@ addBtn.addEventListener('click', function() {
 const closeBtnModal = modal.querySelector('img');
 
 closeBtnModal.addEventListener('click', function() {
-    modal.querySelector('.name-input').value = "";
-    modal.querySelector('.email-input').value = "";
-    modal.querySelector('.phone-input').value = "";
-    modal.querySelector('.company-input').value = "";
-    modal.querySelector('.country-input').value = "";
-    modal.querySelector('.zip-input').value = "";
-    modal.querySelector('.address-input').value = "";
-    modal.querySelector('.apt-input').value = "";
+    emptyModal();
     modal.style.display = 'none';
 });
 
     
 const addBtnModal = modal.querySelector('.add-clients-btn');
+let isEditMode = false;
+let editingRowId = null;
 addBtnModal.addEventListener('click', function() {
-    brojac++;
-
-    const tableDiv = document.querySelector('.table-rows');
-
-    let noviID = '#'+brojac;
-    const noviDiv = document.createElement('tr');
-    noviDiv.setAttribute('class', 'table-row');
-    noviDiv.setAttribute('id', brojac);
-    tableDiv.appendChild(noviDiv);
-
-    const name = modal.querySelector('.name-input');
-    const email = modal.querySelector('.email-input');
-    const phone = modal.querySelector('.phone-input');
-    const company = modal.querySelector('.company-input');
-    const companyValue = company.value;
-    const country = modal.querySelector('.country-input');
-    const zip = modal.querySelector('.zip-input');
-    const zipValue = zip.value;
-    const address = modal.querySelector('.address-input');
-    const apt = modal.querySelector('.apt-input');
-    const aptValue = apt.value;
-    // if(name.value === "" || email.value === "" || phone.value === "" || company.value === "" || country.value === "" || 
-    // zip.value === "" || address.value === "" || apt.value === "") {
-    //     alert("Niste uneli sve podatke!");
-    // }
-
-    const idDiv = document.createElement('td');
-    idDiv.innerText = noviID;
-    idDiv.classList.add('table-cell');
-    noviDiv.appendChild(idDiv);
-
-    const nameEmail = document.createElement('td');
-    nameEmail.classList.add('table-cell');
-    noviDiv.appendChild(nameEmail);
-
-    const nameDiv = document.createElement('div');
-    nameDiv.classList.add('name-column');
-    nameDiv.innerText = name.value;
-    const nameObject = {id: noviDiv.id, name: nameDiv.innerText};
-    names.push(nameObject);
-    nameEmail.appendChild(nameDiv);
-
-    const emailDiv = document.createElement('div');
-    emailDiv.innerText = email.value;
-    nameEmail.appendChild(emailDiv);
-    
-    const phoneCountry = document.createElement('td');
-    phoneCountry.classList.add('table-cell');
-    noviDiv.appendChild(phoneCountry);
-
-    const phoneDiv = document.createElement('div');
-    phoneDiv.innerText = phone.value;
-    phoneCountry.appendChild(phoneDiv);
-
-    const countryDiv = document.createElement('div');
-    countryDiv.innerText = country.value;
-    phoneCountry.appendChild(countryDiv);
-
-    const addressDiv = document.createElement('td');
-    addressDiv.innerText = address.value;
-    addressDiv.classList.add('table-cell');
-    noviDiv.appendChild(addressDiv);
-
-    const linksDiv = document.createElement('td');
-    linksDiv.classList.add('table-cell');
-    const link = document.createElement('div');
-    link.innerText = "False";
-    link.style.width = "40px"
-    link.style.borderRadius = "0.5rem";
-    if(link.innerText === "True" || link.innerText === "Active")
+    if(isEditMode)
     {
-        link.style.backgroundColor = "#ECFDF3";
-        link.style.color = "#027A48";
+        const currentRow = document.getElementById(editingRowId);
+        const rowCells = currentRow.cells;
+
+        updateRowData(rowCells, {
+            name: modal.querySelector('.name-input').value, 
+            email: modal.querySelector('.email-input').value,
+            phone: modal.querySelector('.phone-input').value,
+            company: modal.querySelector('.company-input').value,
+            country: modal.querySelector('.country-input').value,
+            address: modal.querySelector('.address-input').value
+        });
+
+        modal.style.display = 'none';
+        isEditMode = false;
+        emptyModal();
     }
     else
     {
-        link.style.backgroundColor = "#FEF3F2";
-        link.style.color = "#B42318";
+        brojac++;
+
+        const tableDiv = document.querySelector('.table-rows');
+
+        let noviID = '#'+brojac;
+        const noviDiv = document.createElement('tr');
+        noviDiv.setAttribute('class', 'table-row');
+        noviDiv.setAttribute('id', brojac);
+        tableDiv.appendChild(noviDiv);
+
+        const name = modal.querySelector('.name-input');
+        const email = modal.querySelector('.email-input');
+        const phone = modal.querySelector('.phone-input');
+        const company = modal.querySelector('.company-input');
+        const companyValue = company.value;
+        const country = modal.querySelector('.country-input');
+        const zip = modal.querySelector('.zip-input');
+        const zipValue = zip.value;
+        const address = modal.querySelector('.address-input');
+        const apt = modal.querySelector('.apt-input');
+        const aptValue = apt.value;
+
+        if(name.value === "" || email.value === "" || company.value === "" || country.value === "" || 
+        zip.value === "" || address.value === "" || apt.value === "") {
+            alert("Niste uneli sve podatke!");
+        }
+
+        const idDiv = document.createElement('td');
+        idDiv.innerText = noviID;
+        idDiv.classList.add('table-cell');
+        noviDiv.appendChild(idDiv);
+
+        const nameEmail = document.createElement('td');
+        nameEmail.classList.add('table-cell');
+        noviDiv.appendChild(nameEmail);
+
+        const nameDiv = document.createElement('div');
+        nameDiv.classList.add('name-column');
+        nameDiv.innerText = name.value;
+        nameEmail.appendChild(nameDiv);
+
+        const emailDiv = document.createElement('div');
+        emailDiv.innerText = email.value;
+        emailDiv.style.color = '#667085';
+        nameEmail.appendChild(emailDiv);
+        
+        const phoneCountry = document.createElement('td');
+        phoneCountry.classList.add('table-cell');
+        noviDiv.appendChild(phoneCountry);
+
+        const phoneDiv = document.createElement('div');
+        phoneDiv.innerText = phone.value;
+        phoneCountry.appendChild(phoneDiv);
+
+        const countryDiv = document.createElement('div');
+        countryDiv.innerText = country.value;
+        countryDiv.style.color = '#667085';
+        phoneCountry.appendChild(countryDiv);
+
+        const adressZip = document.createElement('td');
+        adressZip.classList.add('table-cell');
+        noviDiv.appendChild(adressZip);
+
+        const addressDiv = document.createElement('div');
+        addressDiv.innerText = address.value;
+        adressZip.appendChild(addressDiv);
+
+        const zipDiv = document.createElement('div');
+        zipDiv.innerText = zipValue;
+        zipDiv.style.color = '#667085';
+        adressZip.appendChild(zipDiv);
+
+        const linksDiv = document.createElement('td');
+        linksDiv.classList.add('table-cell');
+        const link = document.createElement('div');
+        link.innerText = "False";
+        link.style.width = "40px"
+        link.style.borderRadius = "0.5rem";
+        if(link.innerText === "True" || link.innerText === "Active")
+        {
+            link.style.backgroundColor = "#ECFDF3";
+            link.style.color = "#027A48";
+        }
+        else
+        {
+            link.style.backgroundColor = "#FEF3F2";
+            link.style.color = "#B42318";
+        }
+        linksDiv.appendChild(link);
+        noviDiv.appendChild(linksDiv);
+
+        const buttonsDiv = document.createElement('td');
+        buttonsDiv.classList.add('table-cell');
+        noviDiv.appendChild(buttonsDiv);
+
+        const deleteBtn = document.createElement('img');
+        deleteBtn.setAttribute('src', 'images/modal/delete.png');
+        buttonsDiv.appendChild(deleteBtn);
+
+        const editBtn = document.createElement('img');
+        editBtn.setAttribute('src', 'images/modal/edit.png');
+        buttonsDiv.appendChild(editBtn);
+
+        deleteBtn.addEventListener('click', function() {
+            deleteClientModal.id = noviDiv.id;
+            deleteClientModal.style.display = "flex";
+        });
+
+        editBtn.addEventListener('click', function() {
+            openEditModal(noviDiv.id, nameDiv.innerText, emailDiv.innerText, phoneDiv.innerText, companyValue, countryDiv.innerText, zipValue, addressDiv.innerText, aptValue);
+        })
+
+        emptyModal();
+
+        modal.style.display = 'none';
+
+        let numberOfClients = document.querySelector(".number-of-clients");
+        let num = parseInt(numberOfClients.innerText);
+        num++;
+        numberOfClients.innerText = num.toString();
     }
-    linksDiv.appendChild(link);
-    noviDiv.appendChild(linksDiv);
-
-    const buttonsDiv = document.createElement('td');
-    buttonsDiv.classList.add('table-cell');
-    noviDiv.appendChild(buttonsDiv);
-
-    const deleteBtn = document.createElement('img');
-    deleteBtn.setAttribute('src', 'images/modal/delete.png');
-    buttonsDiv.appendChild(deleteBtn);
-
-    const editBtn = document.createElement('img');
-    editBtn.setAttribute('src', 'images/modal/edit.png');
-    buttonsDiv.appendChild(editBtn);
-
-    deleteBtn.addEventListener('click', function() {
-        deleteClientModal.id = noviDiv.id;
-        deleteClientModal.style.display = "flex";
-    });
-
-    editBtn.addEventListener('click', function() {
-        openEditModal(noviDiv.id, nameDiv.innerText, emailDiv.innerText, phoneDiv.innerText, companyValue, countryDiv.innerText, zipValue, addressDiv.innerText, aptValue);
-    })
-
-    name.value = ""; 
-    email.value = ""; 
-    phone.value = ""; 
-    company.value = ""; 
-    country.value = ""; 
-    zip.value = ""; 
-    address.value = "";  
-    apt.value = "";
-
-    modal.style.display = 'none';
-
-    let numberOfClients = document.querySelector(".number-of-clients");
-    let num = parseInt(numberOfClients.innerText);
-    num++;
-    numberOfClients.innerText = num.toString();
 });
 
 function openEditModal(rowId, name, email, phone, company, country, zip, address, apt) {
+    isEditMode = true;
+    editingRowId = rowId;
     modal.style.display = 'flex';
 
     modal.querySelector('.name-input').value = name;
@@ -192,28 +182,26 @@ function openEditModal(rowId, name, email, phone, company, country, zip, address
     modal.querySelector('.zip-input').value = zip;
     modal.querySelector('.address-input').value = address;
     modal.querySelector('.apt-input').value = apt;
+}
 
-    const currentRow = document.getElementById(rowId);
-    const rowCells = currentRow.cells;
-    console.log(rowCells);
-    
-    modal.querySelector('.add-clients-btn').addEventListener('click', function() {
-        rowCells[1] = modal.querySelector('.name-input').value;
-        // rowCells[1] =  modal.querySelector('.email-input').value;
-        rowCells[2] =  modal.querySelector('.phone-input').value;
-        // rowCells[1] =  modal.querySelector('.email-input').value;
+function emptyModal() {
+    modal.querySelector('.name-input').value = "";
+    modal.querySelector('.email-input').value = "";
+    modal.querySelector('.phone-input').value = "";
+    modal.querySelector('.company-input').value = "";
+    modal.querySelector('.country-input').value = "";
+    modal.querySelector('.zip-input').value = "";
+    modal.querySelector('.address-input').value = "";
+    modal.querySelector('.apt-input').value = "";
+}
 
-        modal.querySelector('.name-input').value = "";
-        modal.querySelector('.email-input').value = "";
-        modal.querySelector('.phone-input').value = "";
-        modal.querySelector('.company-input').value = "";
-        modal.querySelector('.country-input').value = "";
-        modal.querySelector('.zip-input').value = "";
-        modal.querySelector('.address-input').value = "";
-        modal.querySelector('.apt-input').value = "";
-        
-        modal.style.display = 'none';
-    });
+function updateRowData(rowCells, newData) {
+    rowCells[1].childNodes[0].innerText = newData.name;
+    rowCells[1].childNodes[1].innerText = newData.email;
+    rowCells[2].childNodes[0].innerText = newData.phone;
+    rowCells[2].childNodes[1].innerText = newData.country;
+    rowCells[3].childNodes[0].innerText = newData.address;
+    rowCells[3].childNodes[1].innerText = newData.zip;
 }
 
 const clientInfoBtn = document.querySelector(".client-info-button");
@@ -236,7 +224,10 @@ clientInfoBtn.addEventListener('click', function() {
     clientInfo.style.display = 'flex';
 
     pageTitle.addEventListener('click', function() {
-        pageNavigation.removeChild(newTitle);
+        if(pageNavigation.contains(newTitle))
+        {   
+            pageNavigation.removeChild(newTitle);
+        }
         pageInfo.style.display = 'flex';
         clientInfo.style.display = 'none';
         pageTitle.style.color = "#6941C6";
@@ -358,7 +349,6 @@ sendLinkBtn.addEventListener('click', function() {
         expiration.innerText = "Unlimited";
 
     const projectAccessLimitation = newLinkModal.querySelector('.project-access-limitation');
-    // console.log(projectAccessLimitation);
     const onlySelected = newLinkModal.querySelector('.only-selected');
     const selectTime = newLinkModal.querySelector('.select-time'); 
 
@@ -370,7 +360,6 @@ sendLinkBtn.addEventListener('click', function() {
         projectAccess.innerText = "Access limitation";
     if(onlySelected.checked)
     {
-        
         projectAccess.innerText = selectTime.value;
         projectAccess.style.textDecoration = "underline";
         projectAccess.style.color = "#6941C6";

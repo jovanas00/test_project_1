@@ -33,5 +33,6 @@
     color: white;
     border: none;
     border-radius: 0.2rem;
-    padding: 5px ;
+    padding: 5px;
+    cursor: pointer;
 }
