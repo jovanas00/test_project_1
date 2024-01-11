@@ -7,6 +7,12 @@ logInBtn.addEventListener('click', function() {
     check();
 })
 
+// window.addEventListener('load', () => {
+//     if (localStorage.getItem('isLogedIn') && JSON.parse(localStorage.getItem('isLogedIn'))) {
+//         window.location = 'index.html';
+//     }   
+// })
+
 function check() {
     const storedEmail = localStorage.getItem('email');
     const storedPassword = localStorage.getItem('password');

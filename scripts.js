@@ -1,8 +1,14 @@
 const logOut = document.querySelector('.sidebar-button');
 logOut.addEventListener('click', function() {
-    localStorage.setItem('isLogedIn', false);
+    localStorage.setItem('isLogedIn', 'false');
     window.location = 'login.html';
 });
+
+// window.addEventListener('load', () => {
+//     if (!localStorage.getItem('isLogedIn') || !JSON.parse(localStorage.getItem('isLogedIn'))) {
+//         window.location = 'login.html';
+//     }
+// })
 
 const addBtn = document.querySelector('.add-clients-btn');
 const modal = document.querySelector('.modal-div');
