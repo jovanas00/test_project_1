@@ -243,7 +243,6 @@ ul.navigation li + li:before {
 }
 
 .table-div {
-    overflow-y: auto;
     overflow-x:auto;
 }
 
@@ -296,12 +295,10 @@ table {
 .add-client-modal,
 .new-link-modal {
     position: absolute;
-    background-color: white;/*#EAECF0;*/
+    background-color: white;
     display: flex;
     flex-direction: column;
-    /* width: 352px; */
     height: 100%;
-    /* top: calc(50% - 200px); */
     left: calc(50% - 250px);
     padding: 1.5rem;
     z-index: 100;

@@ -37,7 +37,8 @@ addBtnModal.addEventListener('click', function() {
             phone: modal.querySelector('.phone-input').value,
             company: modal.querySelector('.company-input').value,
             country: modal.querySelector('.country-input').value,
-            address: modal.querySelector('.address-input').value
+            address: modal.querySelector('.address-input').value,
+            zip: modal.querySelector('.zip-input').value
         });
 
         modal.style.display = 'none';
